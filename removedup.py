@@ -6,8 +6,8 @@ def delete_extra_files(directory):
 
     # Iterate through all files in the directory
     for filename in sorted(os.listdir(directory)):
-        if filename.endswith('.jpg') and len(filename) > 8:
-            prefix = filename[:8]  # Extract the 8-character prefix
+        if filename.endswith('.jpg') and len(filename) > 20:
+            prefix = filename[:20]  # Extract the 8-character prefix
             if prefix not in prefix_dict:
                 prefix_dict[prefix] = []
             prefix_dict[prefix].append(filename)
@@ -26,7 +26,7 @@ def delete_extra_files(directory):
                     print(f"Error deleting file {file_path}: {e}")
 
 # Directory containing the .jpg files
-directory_path = "./train8"
+directory_path = "./train6"
 
 # Run the function
 delete_extra_files(directory_path)
